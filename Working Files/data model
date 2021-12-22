@@ -1,0 +1,82 @@
+user
+-----
+id PK bigint IDENTITY
+email VARVHAR(150) UNIQUE
+group_id bigint UNIQUE FK >- group.id
+name VARCHAR(50)
+
+group
+-----
+id PK bigint IDENTITY
+name VARCHAR(50)
+
+mail_piece
+------
+id PK IDENTITY bigint FK >- scan.piece_id
+user_id bigint FK >- user.id
+mailing_id FK >- mailing.id
+pieceId UUID UNIQUE NULLABLE
+edocMailingGroupId VARCHAR(50) NULLABLE
+idTag VARCHAR(50) NULLABLE
+imb VARCHAR(31)
+mailClassDescription VARCHAR(50) NULLABLE
+imbMid VARCHAR(9)
+imbRoutingCode VARCHAR(11) NULLABLE
+imbTrackingCode VARCHAR(20)
+expectedDeliveryDate date NULLABLE
+startTheClockDate date NULLABLE
+imbSerialNumber VARCHAR(11) NULLABLE
+imbStid VARCHAR(3)
+anticipatedDeliveryDate date NULLABLE
+predictedDeliveryDate date NULLABLE
+edocSubmitterCrid VARCHAR(15) NULLABLE
+routingCodeImbMatchingPortion VARCHAR(11) NULLABLE
+edocJobId VARCHAR(50) NULLABLE
+recipient VARCHAR(50) NULLABLE
+title (VARCHAR(50) NULLABLE
+company VARCHAR(50) NULLABLE
+address1 VARCHAR(150) NULLABLE
+address2 VARCHAR(150) NULLABLE
+address3 VARCHAR(150) NULLABLE
+city VARCHAR(150)
+state VARCHAR(2)
+zip VARCHAR(9)
+
+scan
+----
+id PK bigint IDENTITY FK >- data_message.scan_id
+piece_id bigint UNIQUE
+scanLocaleKey VARCHAR(10) NULLABLE
+machineName VARCHAR(10) NULLABLE
+scanFacilityCity VARCHAR(100) NULLABLE
+scanFacilityState VARCHAR(2) NULLABLE
+scannerType VARCHAR(50) NULLABLE
+scanEventCode int NULLABLE
+scanDatetime dateTime
+handlingEventTypeDescription VARCHAR(25) NULLABLE
+scanFacilityZip VARCHAR(9) NULLABLE
+machineId VARCHAR(10) NULLABLE
+handlingEventType VARCHAR(10) NULLABLE
+scanFacilityName VARCHAR(50) NULLABLE
+
+
+
+
+data_message
+----
+id PK bigint IDENTITY
+scan_id bigint NULLABLE
+import_time dateTime default=GETUTCDATE() NULLABLE
+msgGrpId VARCHAR(50) NULLABLE
+msgSerNbr int NULLABLE
+totMsgCnt int NULLABLE
+recCnt int NULLABLE
+totRecCnt int NULLABLE
+
+mailing
+---
+id
+customer VARCHAR(100) NULLABLE
+mailing_name VARVHAR(50) NULLABLE
+mailing_dropoff_date date NULLABLE
+mailing_type_description VARCHAR(50) NULLABLE
