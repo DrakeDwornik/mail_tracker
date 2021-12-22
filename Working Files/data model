@@ -14,7 +14,7 @@ mail_piece
 ------
 id PK IDENTITY bigint FK >- scan.piece_id
 user_id bigint FK >- user.id
-mailing_id FK >- mailing.id
+mailing_id BIGINT FK >- mailing.id
 pieceId UUID UNIQUE NULLABLE
 edocMailingGroupId VARCHAR(50) NULLABLE
 idTag VARCHAR(50) NULLABLE
@@ -75,7 +75,7 @@ totRecCnt int NULLABLE
 
 mailing
 ---
-id
+id BIGINT PK
 customer VARCHAR(100) NULLABLE
 mailing_name VARVHAR(50) NULLABLE
 mailing_dropoff_date date NULLABLE
