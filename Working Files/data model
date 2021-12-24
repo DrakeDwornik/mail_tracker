@@ -80,3 +80,6 @@ customer VARCHAR(100) NULLABLE
 mailing_name VARVHAR(50) NULLABLE
 mailing_dropoff_date date NULLABLE
 mailing_type_description VARCHAR(50) NULLABLE
+
+
+https://app.quickdatabasediagrams.com/#/

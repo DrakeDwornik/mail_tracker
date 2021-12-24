@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "c2eb9420-4368-4afe-a801-93983f091e76",
+		"name": "USPS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://iv.usps.com/ivws_api/informedvisapi/api/mt/v1/feed/4630fe43-74b4-47bc-9b4a-581268235dfa/fileHistory/resend",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "anB4sUKKBOQmYJJZ+PMw4ZdEtIdbmMs4BRwBFJUj84ttjIODHDsAcQpfM0s5XKHZgN6KGPCwSTrD/hlbNJFES9adxG3uYOYxHT09UPy1Oeg00Ki79fV/ZXq08avyUjQYCrn0H8jrUht02wiBqyfsxPtCzja8rWSlNATxe5EbUHhGQyPtJOUeZFt2UbICYSSbTNYCBevOLMxbk4L6hEFNMxGdf9QlWdvj3AuO1QcRMCxr0FZTNQPIYiSv8mU1F3a/krBcFhA3Jv445oSROjnnnL9f0galppF98LCzshYPjoTDOUdsj0/MWs7P4/etEc7Q9KFE/0DxnN1+HOD6Lyrg7+5fHiJCQIYAQJvj5xEWoqHEUgABPJUMakHrRGficxVRwlDsTIRjB7Q1QjNs2vnqdSgx26m7SML2fNz1zTFF4KOBDsqmKcjQ26MVIOiTqqsAyLMN4l6Pt43QYRTkK4FYMYiXUX7tQOG/hUBmpLlU938yDCm5rtP1WvPViwQS4/Pm2gaDTb4AAYfIutPThgbWv7UVfB2SKJPT2MDTUXuwKwLtaCj4AJBqyyywTkZcJrW1L9/mRfJD4ZWzHH0qj4xg200QcgI2Cw518rlNpsEWZ77agyvhQdPw9clZwlTKsc/MiezRZqjttMbTMpMK7/1plofb7oyk3/LHsbnCGmBG5MCSWQjzkvI4++l6m9JgaA/D+f3y4WYM5+7MPep+zyUbznaSKZuYLmRBpwLeTIWEoPp6aSQxddda4PYctK70VjQ+QaFJrJsfNWkMpgnb46435Q==BFhfWDoSFAAvrvrMxCcDYJu1wbfq4nw0EZWc5BFaIrw2m7CLW3EaNufEY/hDXydlYzPApZXww/Bs0bq/s4wGQv8tJNsmPTDO1KlEtoMC1BHogHlW1jsjWVwl16ea2+hWIcE5BHl7oLPcHXzICddyVhlaHARt/lFiBqX+FeE46ET61uDvuKdp9IaexmW+i2SGftS8Iw/mPXcp8Aijms+RuORrqU+Ds8Wq1UhLenSBk3MYhoOBAf29CA4BCpZbWSZBywlF4UxKq1DLcE7XYnofi6+RAvwttm8TkMXxf1RpKm0C+VH3wOYmgstLF+srUPvxDoWBFaQqNdUCx/Ix/skINQ==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer LuolK8LReczorv/z1VW5YCBGcPYPTOCqVvBOLo0JEmLfYdZuKJM479YIItyB5ZfkeT5+lchFTs27lobWs0zExl6hKpVtU//1Ii9iZewmoQfRn9ucfQRTkQlAxsGq4nJv6d4cY8EcAXgQA16d6C6oR+Kh9fUqhBEp9v9rrt/UgYkPetEIG8oVX6hsEsbGHVKrbygRAH5sa46tFT3Xm5XoTjQCtSPzGYx4eOvje9JVojnqtB2z3KNdGC78Lxf30Od/FnbQ9FWI+jFqsMwtv4vDEuQbqGqUVfUUFY3XLZNGQ9RvGeHW0DvMujPX88Qt1reaBkUj8LlllUxtqrIkoTA1jWHW0Xd4kQVaCVyctPzacmUzl/LSqq8RFl4fRLtxCfQHBz8fDyX2RxlS3aVkqRJELwizVpTaypRhMgNaNr1W1hKMh5prqfoT1uT+vdIxSCRqwlTo5LaS9Bk7hfUqVrV7LvUH0odBAZ2V5jG2qpwYHp8MAZccv/7ZXLleXq+N0OTrY5mRMq8tt38onu8pt3JOjA3JpDw0yU/RJlAGPzNPI2n7TWhYt9MiFKJGmSFfWWF5jfqoTcFYsFrRgbTHtMquTMYSfDAefYuxvO3S8OwrmJaCAuOwMs2RTUVeB+cDvYJ1l/1L3XJwKBZfhu0WkEsn9M9X+RJuCYjQvOvEsfFrH3hSYCr4RzzgDL3842oDCZgAkCCBN8VhsaRILvdeLHId1TShbtE9pro/vy6JIsRUpp7qYyQ2eNNnGWGC0uzVdmtss7Nvd7IA2ZeHJ+lJT2XX5w==FtretDOR+h2irambCBmqVV5yJjk0kl4ZJ5ftIeRaI3sDyAYBDPAcoRZuUXIDF2wDsmVeVY/6J08714DmHxIBMXexymH67cP+v8HyjUvGNLQvQyaol4vijwLVrA8g19hGdMIRQqe4ApLIb+P+WW/YOerFJk04FRzV6NoTHsjcPCSyIeOKTSw6L2FxJpvYV8KQG2oKEwzMySNot6T/qe9f1Ir6t0QZvIBr1/meN/7GtuoiaLn8wJaCZgLLlJd0t9RON/b5gDXKXx/Bqv5fxTB2kY4hvVoUZbt5XHcltMqwj5rI06uIUAYirvZTbZ6QNKAINtNo0p0WfjvULloqPxdQ9Q==",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n \"files\": [\"Y8BMZNFS8DT129QKNJ8B\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iv.usps.com/ivws_api/informedvisapi/api/mt/v1/feed/4630fe43-74b4-47bc-9b4a-581268235dfa/fileHistory/resend",
+					"protocol": "https",
+					"host": [
+						"iv",
+						"usps",
+						"com"
+					],
+					"path": [
+						"ivws_api",
+						"informedvisapi",
+						"api",
+						"mt",
+						"v1",
+						"feed",
+						"4630fe43-74b4-47bc-9b4a-581268235dfa",
+						"fileHistory",
+						"resend"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://services.usps.com/oauth/authenticate",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"username\": \"aztec22\",\n \"password\": \"mb33Cvriz8kgHtdT\",\n \"grant_type\": \"authorization\",\n \"response_type\": \"token\",\n \"scope\": \"user.info.ereg,iv1.apis\",\n \"client_id\": \"687b8a36-db61-42f7-83f7-11c79bf7785e\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://services.usps.com/oauth/authenticate",
+					"protocol": "https",
+					"host": [
+						"services",
+						"usps",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
