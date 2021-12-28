@@ -7,6 +7,14 @@ class Mailing(models.Model):
     mailing_dropoff_date = models.DateField()
     mailing_type_description = models.CharField(max_length=50)
 
+    def __str__(self):
+        pass
+
+
+class LiveMailpieceManager(models.Manager):
+    def get_queryset(self):
+        return super.get_queryset().filter()
+
 
 class Mailpiece(models.Model):
     mailing_id = models.ForeignKey(Mailing, on_delete=models.CASCADE)
@@ -36,6 +44,13 @@ class Mailpiece(models.Model):
     city = models.CharField(max_length=150)
     state = models.CharField(max_length=2)
     zip = models.CharField(max_length=9)
+    first_seen = models.DateField(auto_now_add=True, blank=True)
+
+    objects = models.Manager()
+    live_objects = LiveMailpieceManager()
+
+    def __str__(self):
+        pass
 
 
 class Scan(models.Model):
@@ -52,6 +67,9 @@ class Scan(models.Model):
     machineId = models.CharField(max_length=10)
     handlingEventType = models.CharField(max_length=10)
     scanFacilityName = models.CharField(max_length=50)
+
+    def __str__(self):
+        pass
 
 #
 #
