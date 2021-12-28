@@ -6,6 +6,7 @@ class Mailing(models.Model):
     mailing_name = models.CharField(max_length=50)
     mailing_dropoff_date = models.DateField()
     mailing_type_description = models.CharField(max_length=50)
+    job_number = models.CharField(max_length=15)
 
     def __str__(self):
         pass
