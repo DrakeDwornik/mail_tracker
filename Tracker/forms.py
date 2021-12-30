@@ -1,6 +1,6 @@
 from django import forms
 import datetime
-import pandas as pd
+
 
 
 class MailingForm(forms.Form):
@@ -14,5 +14,5 @@ class MailingForm(forms.Form):
                                                widget=forms.TextInput(attrs={'class': 'form-control'}))
     job_number = forms.CharField(label='job_number', max_length=15,
                                  widget=forms.TextInput(attrs={'class': 'form-control'}))
-  #  file = forms.FileField(label='Mailing File')
+    file = forms.FileField(label='Mailing File')
 
