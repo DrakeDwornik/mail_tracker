@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends '_base.html' %}
 {% block content %}
-    <form action="/your-name/" method="post">
+    <form action="/tracker/add_mailing" method="post">
     <div class="form-group">
         {% csrf_token %}
         {{ form }}

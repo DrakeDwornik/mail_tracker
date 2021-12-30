@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "https://iv.usps.com/ivws_api/informedvisapi/api/mt/v1/feed/4630fe43-74b4-47bc-9b4a-581268235dfa/fileHistory/resend",
+			"name": "POST feed",
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -65,7 +65,7 @@
 			"response": []
 		},
 		{
-			"name": "https://services.usps.com/oauth/authenticate",
+			"name": "POST Auth",
 			"protocolProfileBehavior": {
 				"disabledSystemHeaders": {
 					"content-type": true
@@ -100,6 +100,76 @@
 					"path": [
 						"oauth",
 						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET agg (broken)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "KzYP6rgcfacpV60NsYRFeYD2IdENAlaU8NzzyYD1AHDgDapS747DH4Sy1EsGNBqGuk+o+bhlx2JZ6U9Gfh6OGpx22V5jI/j44xvwPr/N+NY+K2zRLQ5IVQH7Xnw7m80MNyUXusLWcOWhh8bxzozwG7pOpYT5JNR6m/XP9IqLMmIa0rwT9a0AGB3EFrOfQFrxjLC8a/eXf6ngwQbiMLpIokKmr2odoOwmo9lJmGdZw1HIHCahm0RwM9z4WHOzmAdUFI5nOdsaA4jEFT8+N6vAAGPthFDGFJwj8uHejfA/+cSvk7Yh7JcvX8yhuJxDpdl8QLZIP50ze7yVTx6tIaFr+2d5Ko/dOl9fWXN4nf3dWYjCOYrDfE25W+2Sa1NS7rXfD5FbiDDhwmtodJIWSEeCvLqRJpegOZKIjrw6/mAgSpSoMSsDnb+JGN46Cruwpo9Db6IFB7lTa91G1CpoJAqFVFPJE8zzwY6Nw1VaoOz2ZZdPDY2COxw990xQTLZQ1+7SxnBCYIDXX9a/cx+wZ5TovJR2+mJH9b67asLLkj8+7CEZcQaQc4vgh2gxLfda3GBgbD2nsnulTOSMqSqLFObNguy9P00F9eLL7VThvNdjj+dj6Jm14Y0JotVyKWkQKU2gAxaxj85RVzYwNHyoVFA46+Z6tTd2MzrW2cekOHC1fvRDOO+8MLbPHc6+yZzztCS0pGxNv0+/DTP6OSmHa7gDw27U8elk/aIiGsabPSYR3JRjIJ8G79g3wlBRG73cPh04HDPeLWD3LbHmrVrMGnA5zA==hhRxljSezrUf3UDb4uUpc3xOHF/9ib5DHC3isWkHN+kXPx0Fp65ScjRDF73PQf0SBdRJ2NXLYULVrRyO+Q8P4GjCRF4+Rk20TZ+sUnxbNMR0aqidfX7wMKYcVQZeur4AYN0xpQILAN+JQi7qtgOOVcR0nR9RqkzYryh4zCw2IEEgdlhzugCmy8YHUNpSeYPA7VxpkmdiAEAkWLyb1Aa1WrVvx5WmYuyILNjBKR8voREWqJ9XtRU6h+MN4Vr4ginjVAT6hKg58IQcfV/81GBKvCLBYQ5mboDNT5lg/bIQjt1ikpF1Qq9yxbRxbhnR2zXkPOnUCG00tBdAie2c3rle2w==",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer LuolK8LReczorv/z1VW5YCBGcPYPTOCqVvBOLo0JEmLfYdZuKJM479YIItyB5ZfkeT5+lchFTs27lobWs0zExl6hKpVtU//1Ii9iZewmoQfRn9ucfQRTkQlAxsGq4nJv6d4cY8EcAXgQA16d6C6oR+Kh9fUqhBEp9v9rrt/UgYkPetEIG8oVX6hsEsbGHVKrbygRAH5sa46tFT3Xm5XoTjQCtSPzGYx4eOvje9JVojnqtB2z3KNdGC78Lxf30Od/FnbQ9FWI+jFqsMwtv4vDEuQbqGqUVfUUFY3XLZNGQ9RvGeHW0DvMujPX88Qt1reaBkUj8LlllUxtqrIkoTA1jWHW0Xd4kQVaCVyctPzacmUzl/LSqq8RFl4fRLtxCfQHBz8fDyX2RxlS3aVkqRJELwizVpTaypRhMgNaNr1W1hKMh5prqfoT1uT+vdIxSCRqwlTo5LaS9Bk7hfUqVrV7LvUH0odBAZ2V5jG2qpwYHp8MAZccv/7ZXLleXq+N0OTrY5mRMq8tt38onu8pt3JOjA3JpDw0yU/RJlAGPzNPI2n7TWhYt9MiFKJGmSFfWWF5jfqoTcFYsFrRgbTHtMquTMYSfDAefYuxvO3S8OwrmJaCAuOwMs2RTUVeB+cDvYJ1l/1L3XJwKBZfhu0WkEsn9M9X+RJuCYjQvOvEsfFrH3hSYCr4RzzgDL3842oDCZgAkCCBN8VhsaRILvdeLHId1TShbtE9pro/vy6JIsRUpp7qYyQ2eNNnGWGC0uzVdmtss7Nvd7IA2ZeHJ+lJT2XX5w==FtretDOR+h2irambCBmqVV5yJjk0kl4ZJ5ftIeRaI3sDyAYBDPAcoRZuUXIDF2wDsmVeVY/6J08714DmHxIBMXexymH67cP+v8HyjUvGNLQvQyaol4vijwLVrA8g19hGdMIRQqe4ApLIb+P+WW/YOerFJk04FRzV6NoTHsjcPCSyIeOKTSw6L2FxJpvYV8KQG2oKEwzMySNot6T/qe9f1Ir6t0QZvIBr1/meN/7GtuoiaLn8wJaCZgLLlJd0t9RON/b5gDXKXx/Bqv5fxTB2kY4hvVoUZbt5XHcltMqwj5rI06uIUAYirvZTbZ6QNKAINtNo0p0WfjvULloqPxdQ9Q==",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iv.usps.com/ivws_api/informedvisapi/api/aggregate/job/00672497?zip3=197&imb=901736682",
+					"protocol": "https",
+					"host": [
+						"iv",
+						"usps",
+						"com"
+					],
+					"path": [
+						"ivws_api",
+						"informedvisapi",
+						"api",
+						"aggregate",
+						"job",
+						"00672497"
+					],
+					"query": [
+						{
+							"key": "zip3",
+							"value": "197"
+						},
+						{
+							"key": "imb",
+							"value": "901736682"
+						}
 					]
 				}
 			},
