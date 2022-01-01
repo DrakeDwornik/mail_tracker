@@ -16,3 +16,8 @@ class MailingForm(forms.Form):
     job_number = forms.CharField(label='job_number', max_length=15,
                                  widget=forms.TextInput(attrs={'class': 'form-control'}))
     file = forms.FileField(label='Mailing File')
+
+
+class ScansForm(forms.Form):
+    pass
+    # file = forms.FileField(label="Scans JSON", widget=forms.FileInput())

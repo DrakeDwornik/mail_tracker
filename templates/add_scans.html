@@ -1,10 +1,10 @@
 {% extends '_base.html' %}
 {% block content %}
-    <form id="add_mailing_form" enctype="multipart/form-data" action="/tracker/add_mailing" method="post">
+    <form id="add_scans_form" enctype="multipart/form-data" action="/tracker/add_scans" method="post"  class="dropzone">
         <div class="form-group">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" value="Submit">
+{#            <input type="submit" value="Submit">#}
         </div>
     </form>
 
