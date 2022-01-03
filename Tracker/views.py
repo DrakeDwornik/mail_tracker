@@ -1,11 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from .forms import MailingForm, ScansForm
-from .models import Mailing
+from django.http import HttpResponse, JsonResponse
+from .forms import MailingForm
+from .models import Mailing, Mailpiece
 from .file_handler import handle_uploaded_scans, handle_uploaded_list
+import logging
+
+
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    recent_mailings = Mailing.objects.order_by('-id')[:10:-1]
+    return render(request, 'index.html', {'recent_mailings': recent_mailings})
+
 
 def add_mailing(request):
     if request.method == 'POST':
@@ -17,20 +22,34 @@ def add_mailing(request):
             mailing.mailing_type_description = request.POST.get('mailing_type_description')
             mailing.job_number = request.POST.get('job_number')
             mailing.save()
-            handle_uploaded_list(request.FILES['file'], mailing.pk)
+            # handle_uploaded_list(request.FILES['file'], mailing.pk)
+            return render(request, 'add_mailing_list.html', {'mailing_id': mailing.pk})
         return render(request, 'add_mailing.html', {'form': form})
     else:
         form = MailingForm()
 
     return render(request, 'add_mailing.html', {'form': form})
 
+
 def add_scans(request):
     if request.method == 'POST':
-        form = ScansForm(request.POST, request.FILES)
-        if form.is_valid():
-            handle_uploaded_scans(request.FILES['file'])
-        return render(request, 'add_scans.html', {'form': form})
+        # form = ScansForm(request.POST, request.FILES)
+        # if form.is_valid():
+        handle_uploaded_scans(request.FILES['file'])
+        return render(request, 'add_scans.html')
     else:
-        form = ScansForm()
+        pass
+        # form = ScansForm()
 
-    return render(request, 'add_scans.html', {'form': form})
+    return render(request, 'add_scans.html')
+
+
+def add_mailing_list(request):
+    if request.method == 'POST':
+        file = request.FILES['file']
+        mailing_id = request.POST.get('mailing_id')
+        logging.error("here")
+        # return render(request, 'add_mailing.html')
+        # read_headers(file)
+        handle_uploaded_list(file, mailing_id)
+        return render(request, 'add_scans.html')

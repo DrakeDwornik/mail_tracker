@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+{% block content %}
+    <form id="add_scans_form" enctype="multipart/form-data" action="/tracker/add_mailing_list" method="post"  class="dropzone">
+        <div class="form-group">
+             {% csrf_token %}
+            <input type="hidden" name="mailing_id" value="{{ mailing_id }}" />
+
+
+{#            <input type="submit" value="Submit">#}
+        </div>
+    </form>
+    <a href="/tracker/add_mailing"><button type="button" class="btn btn-primary">submit</button>
+
+
+{% endblock content %}

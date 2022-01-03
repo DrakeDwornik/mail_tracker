@@ -2,8 +2,9 @@
 {% block content %}
     <form id="add_scans_form" enctype="multipart/form-data" action="/tracker/add_scans" method="post"  class="dropzone">
         <div class="form-group">
-            {% csrf_token %}
-            {{ form }}
+             {% csrf_token %}
+
+
 {#            <input type="submit" value="Submit">#}
         </div>
     </form>
