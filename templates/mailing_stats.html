@@ -1,5 +1,15 @@
 {% extends '_base.html' %}
 {% block content %}
-    {{ recent_mailings }}
+
+        <h1>{{ mailing }}</h1>
+    <h2>Total Delivered</h2>
+    <p>{{ total }}%</p>
+    <h2>Total Pieces</h2>
+    {{ total_pieces }}
+    {% for k, v in stats.items %}
+        <h2>{{ k }}</h2>
+        <p>{{ v }}% delivered</p>
+    {% endfor %}
+
 
 {% endblock content %}
