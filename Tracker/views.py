@@ -99,9 +99,8 @@ def mailing_stats(request):
 
 
 def receive_data(request):
-    if request.method == 'POST':
-        logging.error(request)
-        return render(request, 'add_scans.html')
+    logging.error(request)
+    return render(request, 'add_scans.html')
         # form = ScansForm(request.POST, request.FILES)
         # if form.is_valid():
     #     handle_uploaded_scans(request.FILES['file'])
