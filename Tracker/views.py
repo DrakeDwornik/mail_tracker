@@ -8,12 +8,12 @@ import logging
 
 
 # Create your views here.
-@ensure_csrf_cookie
+# @ensure_csrf_cookie
 def index(request):
     recent_mailings = Mailing.objects.order_by('-id')[:10:-1]
     return render(request, 'index.html', {'recent_mailings': recent_mailings})
 
-@ensure_csrf_cookie
+# @ensure_csrf_cookie
 def add_mailing(request):
     if request.method == 'POST':
         form = MailingForm(request.POST, request.FILES)
@@ -32,7 +32,7 @@ def add_mailing(request):
 
     return render(request, 'add_mailing.html', {'form': form})
 
-@ensure_csrf_cookie
+# @ensure_csrf_cookie
 def add_scans(request):
     if request.method == 'POST':
         # form = ScansForm(request.POST, request.FILES)
@@ -45,7 +45,7 @@ def add_scans(request):
 
     return render(request, 'add_scans.html')
 
-@ensure_csrf_cookie
+# @ensure_csrf_cookie
 def add_mailing_list(request):
     if request.method == 'POST':
         file = request.FILES['file']
@@ -56,7 +56,7 @@ def add_mailing_list(request):
         handle_uploaded_list(file, mailing_id)
         return render(request, 'add_scans.html')
 
-@ensure_csrf_cookie
+# @ensure_csrf_cookie
 def mailing_stats(request):
     # mailing_id = 53
 
