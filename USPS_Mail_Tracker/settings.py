@@ -50,6 +50,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'USPS_Mail_Tracker.urls'
 
+CSRF_TRUSTED_ORIGINS = ['mail-tracker-dd.herokuapp.com']
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
