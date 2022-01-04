@@ -13,6 +13,7 @@ def index(request):
     recent_mailings = Mailing.objects.order_by('-id')[:10:-1]
     return render(request, 'index.html', {'recent_mailings': recent_mailings})
 
+
 # @ensure_csrf_cookie
 def add_mailing(request):
     if request.method == 'POST':
@@ -32,6 +33,7 @@ def add_mailing(request):
 
     return render(request, 'add_mailing.html', {'form': form})
 
+
 # @ensure_csrf_cookie
 def add_scans(request):
     if request.method == 'POST':
@@ -45,6 +47,7 @@ def add_scans(request):
 
     return render(request, 'add_scans.html')
 
+
 # @ensure_csrf_cookie
 def add_mailing_list(request):
     if request.method == 'POST':
@@ -55,6 +58,7 @@ def add_mailing_list(request):
         # read_headers(file)
         handle_uploaded_list(file, mailing_id)
         return render(request, 'add_scans.html')
+
 
 # @ensure_csrf_cookie
 def mailing_stats(request):
@@ -68,9 +72,9 @@ def mailing_stats(request):
     # mailing_dropoff_date = mailing.mailing_dropoff_date
     # job_number = mailing.job_number
     stats_dict = {}
-    zip3_list = mailing.mailpiece_set.all().order_by('zip3').values_list('zip3',flat=True).distinct()
+    zip3_list = mailing.mailpiece_set.all().order_by('zip3').values_list('zip3', flat=True).distinct()
     zip3_list = list(zip3_list)
-    zip5_list = mailing.mailpiece_set.all().order_by('zip5').values_list('zip5',flat=True).distinct()
+    zip5_list = mailing.mailpiece_set.all().order_by('zip5').values_list('zip5', flat=True).distinct()
     zip5_list = list(zip5_list)
     pieces = mailing.mailpiece_set.all().order_by('zip5')
     total_pieces = pieces.count()
@@ -90,4 +94,20 @@ def mailing_stats(request):
     # for piece in pieces:
 
     return render(request, 'mailing_stats.html',
-                  {'zip3s': zip3_list, 'zip5s': zip5_list, 'mailing': mailing, 'stats': stats_dict, 'total': total, 'total_pieces': total_pieces})
+                  {'zip3s': zip3_list, 'zip5s': zip5_list, 'mailing': mailing, 'stats': stats_dict, 'total': total,
+                   'total_pieces': total_pieces})
+
+
+def receive_data(request):
+    if request.method == 'POST':
+        logging.error(request)
+        return render(request, 'add_scans.html')
+        # form = ScansForm(request.POST, request.FILES)
+        # if form.is_valid():
+    #     handle_uploaded_scans(request.FILES['file'])
+    #     return render(request, 'add_scans.html')
+    # else:
+    #     pass
+    #     # form = ScansForm()
+    #
+    # return render(request, 'add_scans.html')

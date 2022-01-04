@@ -57,7 +57,7 @@ def handle_uploaded_scans(file):
                 'anticipatedDeliveryDate', 'predictedDeliveryDate', 'routingCodeImbMatchingPortion', 'edocSubmitterCrid',
                 'edocJobId']
             # imb_df.loc[:, piece_cols] = imb_df.loc[:, piece_cols].ffill().bfill()
-            piece_df = imb_df[piece_cols].bfill() 
+            piece_df = imb_df[piece_cols].bfill()
             # logging.error(piece_df.head(1))
             piece_dict = piece_df.head(1).to_dict('records')[0]
             Mailpiece.objects.filter(imb=imb).update(**piece_dict)
